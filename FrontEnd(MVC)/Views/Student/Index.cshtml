@@ -1,0 +1,19 @@
+﻿@model APIDTOs.StudentDTOs
+
+<h1>Add Student</h1>
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        Name:<input type="text" name="Name" required><br>
+        Father Name:<input type="text" name="Father Name" required><br>
+        Email:<input type="email" name="Email" required><br>
+        Phone:<input type="number" name="Phone" required><br>
+        Class Id:<input type="number" name="Class Id" required><br>
+      <div class="form-group">
+          <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Add" class="btn btn-default" required />
+          </div>
+      </div>
+
+    </div>
+}

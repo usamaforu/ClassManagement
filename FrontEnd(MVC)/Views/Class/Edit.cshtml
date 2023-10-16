@@ -1,0 +1,21 @@
+﻿@model APIDTOs.ClassDTOs
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm("Edit", "Class", method: FormMethod.Post,new { @class = "form-horizontal" }))
+{
+   <div>
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <div class="form-group">
+            <label for="Name">Name:</label>
+            <input type="text" name="ClassName" id="ClassName" class="form-control" value="@Model.ClassName" required />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Update" class="btn btn-primary" />
+        </div>
+    </div>
+
+}
+

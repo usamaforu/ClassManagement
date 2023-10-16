@@ -1,0 +1,49 @@
+﻿@model APIDTOs.ClassDTOs
+@using (Html.BeginForm())
+{
+    <style>
+    .form-horizontal {
+        width: 50%;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    input[type="submit"] {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+<center>
+    <h1>Add Class</h1>
+    <div class="form-horizontal">
+      Class  Name:<input type="text" name="ClassName" required>
+      <div class="form-group">
+          <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Add" class="btn btn-default" required />
+          </div>
+      </div>
+    </div>
+    </center>
+}
+

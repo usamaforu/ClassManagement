@@ -1,0 +1,63 @@
+﻿@model List<APIDTOs.ClassDTOs>
+@{
+    ViewBag.Title = "All Classes";
+
+    <style>
+    .table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .table th, .table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .table th {
+        background-color:lightcoral;
+    }
+
+    .table tbody tr:nth-child(even) {
+        background-color:lightseagreen;
+    }
+
+    .table tbody tr:hover {
+        background-color: burlywood;
+    }
+</style>
+    <table class="table">
+    <h1>All Classes</h1>
+    <thead>
+    <tr>
+    <th>
+    Id
+    </th>
+    <th>
+    Class Name
+    </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach(var item in Model)
+            {
+                <tr>
+                <td>@item.Id</td>
+                <td>@item.ClassName</td>
+               <td> @Html.ActionLink("Delete", "Delete", new { id = item.Id })</td>
+               <td>@Html.ActionLink("Edit","Edit",new{id = item.Id})</td>
+                @foreach(var items in item.Students )
+                    {
+                        <tr>
+                        <td>@items.Name</td>
+                        <td>@items.FatherName</td>
+                        <td>@items.Email</td>
+                        <td>@items.Phone</td>
+                        </tr>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+    @Html.ActionLink("AddClass","AddClass")
+}

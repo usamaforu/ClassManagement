@@ -1,0 +1,65 @@
+﻿@model APIDTOs.StudentDTOs
+
+
+@using (Html.BeginForm())
+{
+   <html>
+       <head>
+           <style>
+    .tab-content {
+        width: 50%;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        background-color:lightseagreen;
+        border-radius: 10px;
+    }
+
+    input[type="text"], input[type="email"], input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    input[type="submit"] {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+       </head>
+        <center>
+            <h1>Add Student</h1>
+     <div class="tab-content">
+        Name: <input type="text" name="Name" required><br><br>
+     Father Name: <input type="text" name="FatherName" required><br><br>
+        Email: <input type="email" name="Email" required><br><br>
+       Phone: <input type="number" name="Phone" required><br><br>
+       ClassId: <select name="ClassId" class="form-control">
+        <option selected disabled>Select Class</option>
+        @foreach (var cl in ViewBag.list)
+        {
+            <option value="@cl.Id">@cl.ClassName</option>
+        }
+    </select>
+      <div class="form-group">
+          <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Add" class="btn btn-default" required />
+          </div>
+      </div>
+
+     </div>
+    </center>
+   </html>
+}
